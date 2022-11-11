@@ -60,6 +60,23 @@ async function run() {
 
         // })
 
+
+        app.post('/addservice', async (req, res) => {
+
+            const query = {}
+            const cursor = serviceCollection.find(query);
+            const services = await cursor.toArray();
+
+            console.log(req.body);
+            const service = req.body;
+            service.service_id = services.length + 1;
+            services.push(service);
+            console.log(service);
+            res.send(service);
+
+
+        })
+
     }
     finally {
 
