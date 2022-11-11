@@ -43,22 +43,22 @@ async function run() {
 
 
 
-        // app.post('/services/:id', async (req, res) => {
+        app.post('/services/:id', async (req, res) => {
 
-        //     const id = req.params.id;
-        //     const query = { _id: ObjectId(id) };
-        //     const service = await serviceCollection.findOne(query);
-        //     const reviews = service.reviews;
-        //     console.log(reviews.length);
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const service = await serviceCollection.findOne(query);
+            const reviews = service.reviews;
+            console.log(reviews.length);
 
-        //     console.log('POST API called');
-        //     const newReviews = req.body;
-        //     newReviews.id = reviews.length + 1;
-        //     reviews.push(newReviews);
-        //     console.log(newReviews);
-        //     res.send(newReviews);
+            console.log('POST API called');
+            const newReviews = req.body;
+            newReviews.id = reviews.length + 1;
+            reviews.push(newReviews);
+            console.log(newReviews);
+            res.send(newReviews);
 
-        // })
+        })
 
 
         app.post('/addservice', async (req, res) => {
