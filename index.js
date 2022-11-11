@@ -51,12 +51,12 @@ async function run() {
             const reviews = service.reviews;
             console.log(reviews.length);
 
-            console.log('POST API called');
-            const newReviews = req.body;
-            newReviews.id = reviews.length + 1;
-            reviews.push(newReviews);
-            console.log(newReviews);
-            res.send(newReviews);
+            // console.log('POST API called');
+            // const newReviews = req.body;
+            // newReviews.id = reviews.length + 1;
+            // reviews.push(newReviews);
+            // console.log(newReviews);
+            // res.send(newReviews);
 
         })
 
